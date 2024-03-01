@@ -19,6 +19,8 @@ namespace Exercise2_LoopsAndStringManipulation
                 Console.WriteLine("1. Add person");
                 Console.WriteLine("2. Add more than a person");
                 Console.WriteLine("3. write the input and repeat it ten times on a row");
+                Console.WriteLine("4. divide the input by each space and add it to a array");
+
                 string inputOption = Console.ReadLine();
 
                 switch (inputOption)
@@ -53,7 +55,27 @@ namespace Exercise2_LoopsAndStringManipulation
                         }
 
                         Console.WriteLine(text);
+                        break;
+                    case "4":
+                        bool sucess = false;
+                        string[] wordsList;
+                        do
+                        {
+                            Console.WriteLine("Please enter a text with at least 3 words");
+                            var inputText = Console.ReadLine();
+                            wordsList = inputText.Split(" ");
 
+                            //om vi har 3 eller mer så gå avsluta loopen
+                            if(wordsList.Length >= 3)
+                            {
+                                sucess = true;
+                            }
+
+                        } while (!sucess);
+
+                        //print the thrid string of the text
+                        string thirdString = wordsList[2];
+                        Console.WriteLine(thirdString);
                         break;
 
                     default:
