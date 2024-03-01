@@ -14,10 +14,11 @@ namespace Exercise2_LoopsAndStringManipulation
             while (programRun == true)
             {
                 //säg till användaren att de har kommit till huvudmenyn
-                Console.WriteLine("välkommen till huvudmenyn, choose one of the options below.");
+                Console.WriteLine("Welcome to menu, choose one of the options below.");
                 Console.WriteLine("0. Exits the program");
                 Console.WriteLine("1. Add person");
                 Console.WriteLine("2. Add more than a person");
+                Console.WriteLine("3. write the input and repeat it ten times on a row");
                 string inputOption = Console.ReadLine();
 
                 switch (inputOption)
@@ -35,6 +36,24 @@ namespace Exercise2_LoopsAndStringManipulation
                         printPeopleAndTotalPrice();
                         //displayPeopleList();
                         peopleList.clearList();
+                        break;
+                    case "3"://skriv det text användaren har srivit 10 ggr
+
+                        Console.WriteLine("Write the text you want to repeat 10 times: ");
+                        string input = Console.ReadLine();
+
+                        string text = "";
+                        for (int i = 1; i <= 10; i++)
+                        {
+                            text += $"{i}. {input}";
+                            if (i != 10)
+                            {
+                                text += ", ";
+                            }
+                        }
+
+                        Console.WriteLine(text);
+
                         break;
 
                     default:
