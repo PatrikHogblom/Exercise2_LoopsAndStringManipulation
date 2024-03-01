@@ -98,17 +98,33 @@ namespace Exercise2_LoopsAndStringManipulation
 
         public static void AddMultiplePeople()
         {
-            Console.WriteLine("Write how many people will be in your comapny: ");
-            int.TryParse(Console.ReadLine(), out int totPeople);
-            for (int i = 0; i < totPeople; i++)
+            bool sucessTotPepole = false;
+            do
             {
-                Console.WriteLine("Input your age: ");
-                uint.TryParse(Console.ReadLine(), out uint age);
+                Console.WriteLine("Write how many people will be in your company: ");
+                //Check so that we have right datatype in the input 
+                if (int.TryParse(Console.ReadLine(), out int totPeople))
+                {
+                    for (int i = 1; i <= totPeople; i++)
+                    {
+                        bool sucessInputAge = false;
+                        do 
+                        {
+                            Console.WriteLine($"Input {i}. Insert age: ");
+                            //Check so that we have right datatype in the input 
+                            if (uint.TryParse(Console.ReadLine(), out uint age))
+                            {
+                                Person person = new Person(age);
+                                peopleList.addPersonToList(person);
+                                sucessInputAge = true;
+                            }
 
-                Person person = new Person(age);
+                        } while (!sucessInputAge);
+                    }
+                    sucessTotPepole = true;
+                }
 
-                peopleList.addPersonToList(person);
-            }
+            } while (!sucessTotPepole);
         }
 
         public static void printPeopleAndTotalPrice()
