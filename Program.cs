@@ -118,10 +118,18 @@ namespace Exercise2_LoopsAndStringManipulation
                                 peopleList.addPersonToList(person);
                                 sucessInputAge = true;
                             }
+                            else
+                            {
+                                Console.WriteLine("Please insert a value from 0 and up");
+                            }
 
                         } while (!sucessInputAge);
                     }
                     sucessTotPepole = true;
+                }
+                else
+                {
+                    Console.WriteLine("Please insert a value from 0 and up");
                 }
 
             } while (!sucessTotPepole);
