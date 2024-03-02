@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercise2_LoopsAndStringManipulation
+﻿namespace Exercise2_LoopsAndStringManipulation
 {
-    internal enum Prices 
+    internal enum Prices
     {
         standard = 120,
         youth = 80,

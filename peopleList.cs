@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercise2_LoopsAndStringManipulation
+﻿namespace Exercise2_LoopsAndStringManipulation
 {
     /// <summary>
     /// Represents a list of people added from the object Person, so we will 
@@ -26,14 +20,14 @@ namespace Exercise2_LoopsAndStringManipulation
         /// </summary>
         /// <param name="person">the persons age and price is added to the list</param>
         public void addPersonToList(Person person)
-        { 
-             people.Add(person);
+        {
+            people.Add(person);
         }
 
         /// <summary>
         /// displays the list
         /// </summary>
-        public void displayList() 
+        public void displayList()
         {
             foreach (var item in people)
             {
@@ -47,8 +41,8 @@ namespace Exercise2_LoopsAndStringManipulation
         /// <returns>the total price of tickets for the company of people based on thier ages</returns>
         public uint calculatePriceForCompany()
         {
-            uint sumPrice = 0; 
-            foreach(var item in people)
+            uint sumPrice = 0;
+            foreach (var item in people)
             {
                 sumPrice += item.price;
             }
@@ -59,7 +53,7 @@ namespace Exercise2_LoopsAndStringManipulation
         /// Counts how many people we have in the list
         /// </summary>
         /// <returns></returns>
-        public uint getCountOfList() 
+        public uint getCountOfList()
         {
             return (uint)people.Count;
         }

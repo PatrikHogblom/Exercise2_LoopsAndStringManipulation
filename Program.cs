@@ -1,6 +1,4 @@
-﻿using System.Security.Cryptography.X509Certificates;
-
-namespace Exercise2_LoopsAndStringManipulation
+﻿namespace Exercise2_LoopsAndStringManipulation
 {
     internal class Program
     {
@@ -70,10 +68,10 @@ namespace Exercise2_LoopsAndStringManipulation
             //promts the user to input thier age
             Console.WriteLine("Input your age: ");
             bool sucess = false;
-            do 
+            do
             {
                 //a if statement for the input should be of a specific datatype
-                if(uint.TryParse(Console.ReadLine(), out uint age))
+                if (uint.TryParse(Console.ReadLine(), out uint age))
                 {
                     Person person = new Person(age);//creates a object of a person with a specific age
                     Console.WriteLine(person.getPriceOfPersonMessage());//prints the price of the ticket
@@ -104,7 +102,7 @@ namespace Exercise2_LoopsAndStringManipulation
                     for (int i = 1; i <= totPeople; i++)
                     {
                         bool sucessInputAge = false;
-                        do 
+                        do
                         {
                             Console.WriteLine($"Input {i}. Insert age: ");
                             //reads the input of age and checks so that we have right datatype in the input 
@@ -138,7 +136,7 @@ namespace Exercise2_LoopsAndStringManipulation
         public static void printPeopleAndTotalPrice()
         {
             uint totalSum = peopleList.calculatePriceForCompany();
-            uint totPeople = peopleList.getCountOfList(); 
+            uint totPeople = peopleList.getCountOfList();
             Console.WriteLine($"Total people: {totPeople}, Total cost: {totalSum:C}");
         }
 
@@ -178,7 +176,7 @@ namespace Exercise2_LoopsAndStringManipulation
         /// third word).  
         /// </summary>
         /// <param name="index">placement of the word we want to print out</param>
-        public static void getInputAnPrintWordAtIndex(int index) 
+        public static void getInputAnPrintWordAtIndex(int index)
         {
             bool sucess = false;
             string[] wordsList;
