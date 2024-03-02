@@ -75,17 +75,14 @@ namespace Exercise2_LoopsAndStringManipulation
         {
             if (age < 20)////Youth price
             {
-                this.price = (uint)Prices.youth;
                 return $"Ungdompris: {price:C}";
             }
             else if (age > 64)//Senior price
             {
-                this.price = (uint)Prices.senior;
                 return $"Pensionärspris: {price:C}";
             }
             else //Standard price
             {
-                this.price = (uint)Prices.standard;
                 return $"Standardpris: {price:C}";
             }
         }
