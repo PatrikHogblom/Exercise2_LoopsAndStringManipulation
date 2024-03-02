@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace Exercise2_LoopsAndStringManipulation
 {
-
     internal enum Prices 
     {
         standard = 120,
@@ -15,30 +14,76 @@ namespace Exercise2_LoopsAndStringManipulation
         senior = 90
     }
 
+    ///<summary>
+    ///represents a class of one person with an age and associated price category
+    ///</summary>
     internal class Person
     {
+        /// <summary>
+        /// the age of a person
+        /// </summary>
         public uint age;
+        /// <summary>
+        /// the price category associated with the persons age
+        /// </summary>
         public uint price;
 
+        /// <summary>
+        /// Initializes a constructor of the <see cref="Person"/> class
+        /// </summary>
         public Person() { }
+
+        /// <summary>
+        /// Initializes a constructor of the <see cref="Person"/> class
+        /// with a specified age
+        /// </summary>
+        /// <param name="age">The age of the person</param>
+        /// <param name="price">The price of the person according to thier age</param>
         public Person(uint age)
         {
             this.age = age;
+            price = getPriceOfPerson();
         }
+
+
+        /// <summary>
+        /// Determines the price category based on the persons age
+        /// </summary>
+        /// <returns>The price category based on the persons age</returns>
+        public uint getPriceOfPerson()
+        {
+            if (age < 20)//Youth price
+            {
+                return (uint)Prices.youth;
+            }
+            else if (age > 64)//Senior price
+            {
+                return (uint)Prices.senior;
+            }
+            else //Standard price
+            {
+                return (uint)Prices.standard;
+            }
+        }
+
+        /// <summary>
+        /// Returns a message describing the price category based on the persons age
+        /// </summary>
+        /// <returns>A message of the price based on the persons age</returns>
 
         public string getPriceOfPersonMessage()
         {
-            if (age < 20)//Ungdompris
+            if (age < 20)////Youth price
             {
                 this.price = (uint)Prices.youth;
                 return $"Ungdompris: {price:C}";
             }
-            else if (age > 64)//Pensionärspris
+            else if (age > 64)//Senior price
             {
                 this.price = (uint)Prices.senior;
                 return $"Pensionärspris: {price:C}";
             }
-            else //standardpris
+            else //Standard price
             {
                 this.price = (uint)Prices.standard;
                 return $"Standardpris: {price:C}";
